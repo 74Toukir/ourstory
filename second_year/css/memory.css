@@ -1,0 +1,416 @@
+
+/* ==========================================
+   SPECIAL MOMENT
+========================================== */
+
+.special-moment{
+
+    margin-top:70px;
+    margin-bottom:65px;
+
+}
+
+.special-moment h2{
+
+    margin-bottom:22px;
+
+}
+
+.special-moment h3{
+
+    margin-bottom:18px;
+
+    font-size:38px;
+
+    color:#5a2f17;
+
+}
+
+.love-line{
+
+    margin-top:0;
+    margin-bottom:20px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:34px;
+
+    color:#6b3fa0;
+
+    font-style:italic;
+
+}
+
+/* ==========================================
+   SONG
+========================================== */
+
+.song{
+
+    margin-top:60px;
+    margin-bottom:60px;
+
+    text-align:center;
+
+}
+
+.song h3{
+
+    margin-bottom:25px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:34px;
+
+    color:#5a2f17;
+
+}
+
+.song audio{
+
+    width:100%;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   END MESSAGE
+========================================== */
+
+.ending{
+
+    margin-top:45px;
+    margin-bottom:70px;
+
+    text-align:center;
+
+}
+
+.ending p{
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#5c4433;
+
+}
+
+
+/* ==========================================
+   REPLY SECTION
+========================================== */
+
+.reply-box{
+
+    margin-top:70px;
+
+    padding:35px;
+
+    background:rgba(255,248,235,.30);
+
+    border:1px solid rgba(120,90,50,.15);
+
+    border-radius:16px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.06),
+        inset 0 0 20px rgba(255,255,255,.20);
+
+}
+
+.reply-box h2{
+
+    text-align:center;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:44px;
+
+    color:#5a2f17;
+
+    margin-bottom:22px;
+
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter-box{
+
+    background:rgba(255,250,240,.65);
+
+    border:1px solid rgba(120,90,50,.12);
+
+    border-radius:12px;
+
+    padding:22px;
+
+}
+
+.letter-box label{
+
+    display:block;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:36px;
+
+    color:#5a2f17;
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================================
+   WRITING AREA
+========================================== */
+
+.letter-box textarea{
+
+    width:100%;
+
+    min-height:110px;
+
+    max-height:220px;
+
+    resize:vertical;
+
+    overflow-y:auto;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:23px;
+
+    line-height:1.8;
+
+    color:#4d3728;
+
+    box-sizing:border-box;
+
+}
+
+.letter-box textarea::placeholder{
+
+    color:#a38469;
+
+    font-style:italic;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.letter-box textarea::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.letter-box textarea::-webkit-scrollbar-thumb{
+
+    background:#b9997c;
+
+    border-radius:20px;
+
+}
+
+.letter-box textarea::-webkit-scrollbar-thumb:hover{
+
+    background:#8b5e3c;
+
+}
+
+.letter-box textarea{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#b9997c transparent;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.seal-btn{
+
+    display:block;
+
+    margin:22px auto 0;
+
+    padding:13px 34px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#6d4932;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.seal-btn:hover{
+
+    background:#563827;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .reply-box{
+
+        margin-top:55px;
+
+        padding:25px;
+
+    }
+
+    .reply-box h2{
+
+        font-size:36px;
+
+    }
+
+    .letter-box{
+
+        padding:18px;
+
+    }
+
+    .letter-box label{
+
+        font-size:30px;
+
+    }
+
+    .letter-box textarea{
+
+        min-height:100px;
+
+        font-size:20px;
+
+    }
+
+}
+
+
+/* ==========================================
+   NEXT / PREVIOUS NAVIGATION
+========================================== */
+
+.memory-nav{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.memory-nav a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#5a2f17;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    transition:all .35s ease;
+
+}
+
+.memory-nav a:hover{
+
+    background:rgba(107,77,54,.10);
+
+    color:#4b2d1c;
+
+    letter-spacing:1px;
+
+    transform:translateX(8px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.10);
+
+}
+
+.memory-nav a:active{
+
+    transform:translateX(5px) scale(.98);
+
+}
+
+@media(max-width:768px){
+
+    .memory-nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+}
+
+.love-line{
+
+    margin-top:10px;
+    margin-bottom:30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-style:italic;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+    text-align:center;
+
+    color:#e43fc6;
+
+    text-shadow:
+        0 0 10px rgba(123,63,228,.12);
+
+}

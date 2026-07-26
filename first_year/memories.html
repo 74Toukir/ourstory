@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Memories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 15px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right top, #ffdde1, #ee9ca7, #fad0c4);
+      animation: fadeIn 1.5s ease-in;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #f3c6e8;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 44px;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .next-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #d63384;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .next-button:hover {
+      background-color: #c2185b;
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall 10s linear infinite;
+      opacity: 0.7;
+      pointer-events: none;
+      user-select: none;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 40px 15px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+        line-height: 1.2;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .next-button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .flower {
+        font-size: 18px !important;
+      }
+    }
+
+    @media (max-width: 350px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .next-button {
+        font-size: 13px;
+        padding: 9px 18px;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Falling Flowers -->
+  <script>
+    const emojis = ['🌸', '💮', '🌺', '🌷', '🌼'];
+    for (let i = 0; i < 20; i++) {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDelay = Math.random() * 10 + 's';
+      flower.style.fontSize = (Math.random() * 10 + 20) + 'px';
+      document.body.appendChild(flower);
+    }
+  </script>
+
+  <div class="container">
+    <h1>Memories of Our Togetherness</h1>
+    <p>Though we've only seen each other once, our hearts have met countless times in our conversations. ❤️</p>
+    <p>From silly snaps to deep talks, each moment has felt special. These memories are like tiny petals of love that keep blooming. Thank you for being you, always. 🌸</p>
+    <p>You’ve turned ordinary moments into stories I’ll always remember.</p>
+    <p>Even in silence, there’s comfort — like a warm hug through a screen.</p>
+    <p>I’ve laughed harder, smiled wider, and felt seen in ways I never expected — all because of you.</p>
+    <p>No matter how far we are in distance, emotionally… it feels like you're right here.</p>
+    <p>This page is just a glimpse, but my heart holds an entire album filled with gratitude, admiration, and quiet joy for knowing someone like you. 💖</p>
+    
+    <button class="next-button" onclick="goToWish()">Next</button>
+  </div>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="songs/song2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    // Play audio on load
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+        }
+      });
+    });
+
+    function goToWish() {
+      audio.pause();             // Stop the song
+      audio.currentTime = 0;     // Optional: reset to beginning
+      window.location.href = "wish.html"; // Navigate
+    }
+  </script>
+</body>
+</html>

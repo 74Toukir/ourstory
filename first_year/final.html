@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Reason of My Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* (All your existing styles remain unchanged) */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .typing-title {
+      font-size: 6vw;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+      height: 60px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .scroll-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      height: 60vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .scroll-text {
+      font-size: 4vw;
+      max-width: 100%;
+      line-height: 1.8;
+      text-align: justify;
+      animation: scroll-up 60s linear forwards;
+    }
+    .scroll-text:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll-up {
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
+    }
+    #final-message {
+      display: none;
+      text-align: center;
+      padding: 30px 20px 60px;
+      animation: fade-in 2s ease forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #final-message h2 {
+      font-size: 6vw;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    #answerInput {
+      width: 80%;
+      max-width: 400px;
+      padding: 12px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    #submitBtn {
+      padding: 12px 20px;
+      background-color: #e91e63;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #submitBtn:hover {
+      background-color: #d81b60;
+    }
+    @media (min-width: 600px) {
+      .typing-title {
+        font-size: 32px;
+      }
+      .scroll-text {
+        font-size: 18px;
+      }
+      #final-message h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing-title">The 56 Reasons Of My Love ❤️‍🩹</div>
+
+  <div class="scroll-container">
+    <div class="scroll-text" id="scrollText">
+      1. Your smile. 2. Your eyes. 3. The way you look at me. 4. The way you calm my storms.
+      5. Your patience. 6. Your kindness. 7. Your voice. 8. The way you say my name.
+      9. How you care. 10. How you stay. 11. Your honesty. 12. Your silence.
+      13. The way you listen. 14. How you see through me. 15. Your big heart.
+      16. The way you believe in me. 17. Your laugh. 18. The way you cry.
+      19. Your soul. 20. The way you fight with me. 21. Your late night talks.
+      22. The way you apologize. 23. How you make things better. 24. The way you forgive.
+      25. How you understand. 26. Your flaws. 27. The way you remember details.
+      28. Your random texts. 29. The way you miss me. 30. Your protectiveness.
+      31. Your dreams. 32. Your Mole. 33. The way you make me laugh.
+      34. The way you look sleepy. 35. Your crazy ideas. 36. Your shyness.
+      37. Your strength. 38. Your soft heart. 39. How you value small things.
+      40. How you wait. 41. How you explain calmly. 42. The way you get emotional.
+      43. Your loyalty. 44. Your insecurities. 45. Your growth. 46. Your stubbornness.
+      47. How you let me be me. 48. How you accept my darkness. 49. The way you inspire me.
+      50. The way you kiss. 51. How you look when you're mad. 52. How you fix broken things.
+      53. How you pray. 54. The way you laugh at my jokes. 55. The way you heal me.
+      56. How you love me despite everything.
+    </div>
+  </div>
+
+  <div id="final-message">
+    <h2>I Love You Shifuu 💖</h2>
+    <input type="text" id="answerInput" placeholder="Type your answer here..." />
+    <br><br>
+    <button id="submitBtn" onclick="sendAnswer()">Waiting for your answer</button>
+  </div>
+
+  <!-- Background Music: song4 -->
+  <audio id="bg-music" autoplay loop>
+    <source src="songs/song4.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Attempt to auto-play background music (handles browser autoplay restrictions)
+    window.addEventListener('load', () => {
+      const music = document.getElementById('bg-music');
+      music.play().catch(() => {
+        document.body.addEventListener('click', () => music.play(), { once: true });
+      });
+    });
+
+    // Reveal final message after scroll animation ends (60s)
+    setTimeout(() => {
+      document.getElementById("final-message").style.display = "block";
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 60000);
+
+    function sendAnswer() {
+      const answer = document.getElementById("answerInput").value.trim();
+      if (!answer) {
+        alert("Please type your answer first.");
+        return;
+      }
+
+      const form = document.createElement("form");
+      form.action = "https://formsubmit.co/toukirmasli2737@gmail.com";
+      form.method = "POST";
+
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "Shifuu's Answer";
+      input.value = answer;
+
+      const redirect = document.createElement("input");
+      redirect.type = "hidden";
+      redirect.name = "_next";
+      redirect.value = window.location.href;
+
+      form.appendChild(input);
+      form.appendChild(redirect);
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+
+</body>
+</html>

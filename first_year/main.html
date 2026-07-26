@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffccd5, #ffe5ec);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      animation: backgroundMove 15s infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: left top; }
+      100% { background-position: right bottom; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png'), linear-gradient(145deg, #fff0f5, #ffe6eb);
+      border: 4px double #ff4d6d;
+      border-radius: 20px;
+      box-shadow: 0 0 24px rgba(255, 105, 135, 0.4);
+      animation: pulse 4s ease-in-out infinite;
+      box-sizing: border-box;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.015); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+
+    .from {
+      font-size: 1.05em;
+      line-height: 1.7;
+      color: #333;
+      text-align: justify;
+    }
+
+    .next-button {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0;
+      padding: 12px 25px;
+      background: #ff4d6d;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      width: max-content;
+      cursor: pointer;
+    }
+
+    .next-button:hover {
+      background: #c9184a;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.3em;
+      }
+
+      .from {
+        font-size: 0.95em;
+      }
+
+      .next-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>"Today means the world to me, because it brought you into it."</h1>
+    <p class="from">
+      Happy Birthday, My Special One...<br><br>
+      The day you came into this world, a quiet blessing was whispered into mine.<br><br>
+      Today is your birthday, And honestly... it's not just a date for me. It's the day that gifted this world a soul so pure, That even the stars might envy your light.<br><br>
+      I don't just want to wish you a "Happy Birthday", I want to let you know—You're not just someone in my life... You're the calm, the prayer, the silent strength I look up to.<br><br>
+      "Your one single message brings peace to my chaos, Your presence turns my silence into meaning."<br><br>
+      On this special day, I pray that every dream of yours finds its way to reality, That life unfolds in the most beautiful ways for you... Because someone like you deserves nothing less than magic.<br><br>
+      I feel honored just to know you, And to have the chance to send you a heartfelt wish today... Because knowing someone like you—it's a gift in itself.<br><br>
+      Happy Birthday to you... May your heart always be light, And your journey forever be surrounded by peace, love, and grace.
+    </p>
+    <button class="next-button" onclick="goToNext()">Next</button>
+  </div>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="songs/song1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const lastTime = localStorage.getItem("song1Time");
+      if (lastTime) {
+        audio.currentTime = parseFloat(lastTime);
+      }
+
+      document.body.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+        }
+      });
+    });
+
+    setInterval(() => {
+      if (!audio.paused) {
+        localStorage.setItem("song1Time", audio.currentTime);
+      }
+    }, 1000);
+
+    function goToNext() {
+      audio.pause(); // stop song1
+      localStorage.removeItem("song1Time"); // clear stored time
+      window.location.href = "memories.html"; // navigate to next page
+    }
+  </script>
+</body>
+</html>

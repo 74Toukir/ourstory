@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Audio Elements pointing to correct assets/music/song.mp3 path -->
+    <audio id="countdownMusic" src="assets/music/song.mp3" preload="auto"></audio>
+    <audio id="bgMusic" loop src="assets/music/song.mp3" preload="auto"></audio>
+
+    <!-- LOADER / COUNTDOWN -->
+    <div id="loader" class="scene active">
+        <!-- Tap Overlay to bypass browser autoplay restrictions -->
+        <div id="startOverlay" class="start-overlay" onclick="startExperience()">
+            <div class="tap-card">
+                <span class="envelope-icon">✨</span>
+                <h3>Tap to Open Surprise</h3>
+                <p class="tap-hint">❤️</p>
+            </div>
+        </div>
+        
+        <div id="countdownContent" class="hidden">
+            <h1 id="countdown">3</h1>
+            <p id="loadingText" class="hidden">Crafting Your Special Moment...</p>
+        </div>
+    </div>
+
+    <!-- SCENE 1: Welcome & Intro -->
+    <div id="scene1" class="scene">
+        <img src="assets/images/teddy.png" alt="Cute Bear" class="teddy">
+        <h2>A Cutiepie was born today,<br>23 years ago!</h2>
+        <p>Yes, it's YOU! A little surprise awaits...</p>
+        <button class="btn" onclick="goToScene('scene2')">Start the surprise 🎁</button>
+    </div>
+
+    <!-- SCENE 2: Cake & Decoration -->
+    <div id="scene2" class="scene">
+        <div id="decorationBanner" class="banner hidden">🎉 🥳 🎈</div>
+
+        <!-- Pure CSS Cake -->
+        <div class="cake-container">
+            <div class="plate"></div>
+            <div class="layer layer-bottom"></div>
+            <div class="layer layer-middle"></div>
+            <div class="layer layer-top"></div>
+            <div class="icing"></div>
+            <div class="drips">
+                <div class="drip drip1"></div>
+                <div class="drip drip2"></div>
+                <div class="drip drip3"></div>
+            </div>
+            <!-- Candle (Hidden until 'Light the Candle' is clicked) -->
+            <div id="candle" class="candle hidden">
+                <div class="flame"></div>
+            </div>
+        </div>
+
+        <h2 id="cakeTitle">Happy Birthday,<br>Shifuuu ❤️</h2>
+        
+        <button id="decorateBtn" class="btn" onclick="decorateCake()">🎀 Decorate</button>
+        <button id="candleBtn" class="btn hidden" onclick="lightCandle()">🕯️ Light the Candle</button>
+        <button id="nextToBalloons" class="btn hidden" onclick="goToScene('scene3')">Pop the Balloons ➔</button>
+    </div>
+
+    <!-- SCENE 3: Pop Balloons -->
+    <div id="scene3" class="scene">
+        <h2>Pop all 4 balloons</h2>
+        <div class="balloon-container">
+            <div class="balloon b1" onclick="popBalloon(this, 'You')"><span>🎈</span></div>
+            <div class="balloon b2" onclick="popBalloon(this, 'are')"><span>🎈</span></div>
+            <div class="balloon b3" onclick="popBalloon(this, 'a')"><span>🎈</span></div>
+            <div class="balloon b4" onclick="popBalloon(this, 'Cutiee')"><span>🎈</span></div>
+        </div>
+        <div id="revealedMessage" class="hidden-message"></div>
+        <button id="nextToCards" class="btn hidden" onclick="goToScene('scene4')">Next ➔</button>
+    </div>
+
+    <!-- SCENE 4: Photo Cards Slider -->
+    <div id="scene4" class="scene">
+        <h2>Some Sweet Moments</h2>
+        <p class="subtext">(Swipe or click cards)</p>
+        <div class="card-stack">
+            <div class="card" onclick="nextCard(this)"><img src="assets/images/photo1.jpeg" alt="Memory 1"></div>
+            <div class="card" onclick="nextCard(this)"><img src="assets/images/photo2.jpeg" alt="Memory 2"></div>
+            <div class="card" onclick="nextCard(this)"><img src="assets/images/photo3.jpeg" alt="Memory 3"></div>
+        </div>
+        <button class="btn" onclick="goToScene('scene5')">✉️ Open My Message</button>
+    </div>
+
+    <!-- SCENE 5: Birthday Card Envelope with Pages -->
+    <div id="scene5" class="scene">
+        <h2>A Special Message</h2>
+
+        <div class="envelope-card">
+            <!-- COVER (Visible initially) -->
+            <div id="cardCover" class="card-front" onclick="openEnvelope()">
+                <div class="card-cover-content">
+                    <span class="envelope-icon">💌</span>
+                    <h3>Happy Birthday To You</h3>
+                    <p class="tap-hint">Tap to Open ❤️</p>
+                </div>
+            </div>
+
+            <!-- INSIDE LETTER WITH YOUR PERSONAL MESSAGE -->
+            <div id="cardInside" class="card-inside hidden">
+                <!-- PAGE 1 -->
+                <div class="message-page page-active" id="page1">
+                    <p>
+                        <strong>Happy Birthday Babe ❤️</strong><br><br>
+                        Aaj ka din mere liye sirf ek birthday nahi, balki us din ki khushi hai jab is duniya ko tum jaise khoobsurat dil wala insaan mila tha. Shayad main kabhi lafzon mein nahi bata paungi ki tum meri zindagi mein kitni ahmiyat rakhti ho. Tum woh ho jo meri har dua mein ho, meri har muskurahat ki wajah ho aur mere dil ke sabse kareeb ho.<br><br>
+                        Jab tum meri zindagi mein aayi, tab maine samjha ki sachcha pyaar kya hota hai. Tumne mujhe sirf pyaar nahi diya, balki sukoon, respect aur woh ehsaas diya ki koi mujhe poori duniya se zyada samajhta hai. Tumhare saath bitaya hua har pal meri zindagi ka sabse khoobsurat hissa hai.
+                    </p>
+                </div>
+
+                <!-- PAGE 2 -->
+                <div class="message-page" id="page2">
+                    <p>
+                        Main chahta hoon ki tumhari zindagi mein kabhi koi gham na aaye, tumhara chehra hamesha isi tarah muskurata rahe aur tumhari aankhon mein hamesha khushiyon ki chamak bani rahe.<br><br>
+                        Jo bhi sapne tum dekhti ho, Allah unhe haqeeqat bana de. Jo bhi manzil tum chaho, woh tumhe mile. Aur jo bhi khushi tum deserve karti ho, woh tumhare kadmon mein ho.<br><br>
+                        Tum mere liye sirf ek insaan nahi ho, tum meri aadat ho, meri dua ho, meri duniya ho. Agar mujhe zindagi dobara jeene ka mauka mile, to main har baar tumhe hi chununga. Kyunki tumhare jaisa koi nahi hai aur na hi kabhi ho sakta hai.
+                    </p>
+                </div>
+
+                <!-- PAGE 3 -->
+                <div class="message-page" id="page3">
+                    <p>
+                        Aaj tumhare birthday par main sirf itna kehna chahta hoon ki chahe kitna bhi waqt guzar jaye, meri mohabbat tumhare liye kabhi kam nahi hogi. Har din ke saath yeh aur gehri, aur khoobsurat hoti jayegi. Main hamesha tumhare saath rehna chahta hoon, tumhari har khushi ka hissa banna chahti hoon aur tumhare har sapne ko poora hote dekhna chahta hoon.<br><br>
+                        <strong>Happy Birthday Meri Duniya, Meri Jaan, Mere Dil Ka Sukoon 💖</strong><br><br>
+                        <em>"Meri har dua mein tum ho, meri har khushi mein tum ho, aur meri zindagi ki sabse khoobsurat kahani bhi tum hi ho. Aaj ke din bas itna yaad rakhna, tum bahut special ho... mere liye sabse zyada."</em>
+                    </p>
+                </div>
+
+                <!-- PAGE CONTROLS -->
+                <div class="page-controls">
+                    <button id="prevPageBtn" class="btn-sub" onclick="changePage(-1)" disabled>❮ Prev</button>
+                    <span id="pageTracker">Page 1 of 3</span>
+                    <button id="nextPageBtn" class="btn-sub" onclick="changePage(1)">Next ❯</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUTTON TO MOVE TO FINAL GIFT SCENE -->
+        <button id="nextToGiftBtn" class="btn hidden" onclick="goToScene('scene6')">One Last Thing... ➔</button>
+    </div>
+
+    <!-- SCENE 6: Final Gift Box & Pop-up -->
+    <div id="scene6" class="scene">
+        <h2 id="giftHeading">One Last Thing...</h2>
+        
+        <!-- Gift Box Element -->
+        <div id="giftContainer" class="gift-container" onclick="openGift()">
+            <div id="giftBox" class="gift-box">🎁</div>
+            <p id="giftHint" class="gift-hint">Tap the gift</p>
+        </div>
+
+        <!-- Final Pop-up Modal (Inside Scene 6) -->
+        <div id="finalPopup" class="final-modal hidden">
+            <div class="modal-content">
+                <!-- Heart-offering animated bear -->
+                <img src="assets/images/bear-heart.gif" alt="Teddy giving heart" class="modal-bear-animated">
+                
+                <h3>Lots of love for you ❤️</h3>
+                <p>Once again, Happy Birthday! Hope you loved your surprise.</p>
+                
+                <!-- Modal Buttons Group -->
+                <div class="modal-btn-group">
+                    <button class="btn replay-btn" onclick="restartSurprise()">🔄 Replay</button>
+                    <a href="/second_year/index.html" class="btn story-btn">📖 Our Story</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #2b1d12,
+        #4b3621,
+        #2b1d12
+    );
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:100px 20px 60px;
+
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter{
+
+    width:min(900px,95%);
+
+    min-height:1100px;
+
+    background-image:url("../images/paper.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+
+    padding:110px 70px 80px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(120,90,50,.12);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.45),
+        inset 0 0 25px rgba(255,255,255,.22),
+        inset 0 0 120px rgba(110,80,40,.08);
+
+    overflow:visible;
+
+    /* Keep page turning from the left */
+    transform-origin:left center;
+
+}
+
+/* ==========================================
+   WAX SEAL
+========================================== */
+
+.seal{
+
+    position:absolute;
+
+    top:-65px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:100;
+
+}
+
+.seal img{
+
+    width:190px;
+
+    height:auto;
+
+    display:block;
+
+    filter:
+        drop-shadow(0 10px 10px rgba(0,0,0,.30))
+        drop-shadow(0 20px 35px rgba(0,0,0,.35));
+
+    transition:.4s ease;
+
+}
+
+.seal img:hover{
+
+    transform:scale(1.05) rotate(-3deg);
+
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:90px 15px 40px;
+
+    }
+
+    .letter{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:90px 35px 60px;
+
+    }
+
+    .seal{
+
+        top:-55px;
+
+    }
+
+    .seal img{
+
+        width:155px;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    body{
+
+        padding:80px 10px 30px;
+
+    }
+
+    .letter{
+
+        padding:80px 20px 40px;
+
+        border-radius:14px;
+
+    }
+
+    .seal{
+
+        top:-45px;
+
+    }
+
+    .seal img{
+
+        width:130px;
+
+    }
+
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero{
+
+    text-align:center;
+
+    margin-top:90px;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:88px;
+
+    color:#5a2f17;
+
+    line-height:1;
+
+}
+
+.hero h1 span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:58px;
+
+}
+
+.subtitle{
+
+    margin-top:45px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#6b4d36;
+
+}
+
+.divider{
+
+    margin:50px 0;
+
+    font-size:34px;
+
+    color:#8b5e3c;
+
+    letter-spacing:8px;
+
+}
+
+.quote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+    line-height:2;
+
+    color:#4f3a2d;
+
+    font-style:italic;
+
+}
+
+.scroll{
+
+    margin-top:80px;
+
+    font-size:18px;
+
+    color:#7b4b33;
+
+    animation:bounce 2s infinite;
+
+    cursor:pointer;
+
+    background:none;
+
+    border:none;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+    }
+
+}
+
+/* ==========================================
+   PAGE TURN ANIMATION
+========================================== */
+
+.turn-page{
+
+    animation:pageTurn 1.2s ease forwards;
+
+}
+
+@keyframes pageTurn{
+
+    0%{
+
+        transform:perspective(1800px) rotateY(0deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:perspective(1800px) rotateY(-90deg);
+
+        opacity:0;
+
+    }
+
+}

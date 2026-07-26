@@ -1,0 +1,599 @@
+/* ==========================================
+   CHAPTER PAGE
+========================================== */
+
+.letter{
+
+    min-height:1100px;
+
+    height:auto;
+
+}
+
+/* ==========================================
+   JOURNEY
+========================================== */
+
+.journey{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    max-width:680px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.journey h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:82px;
+
+    color:#5a2f17;
+
+    line-height:1;
+
+}
+
+.subtitle{
+
+    margin-top:20px;
+
+    color:#6b4d36;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+.divider{
+
+    margin:45px 0 60px;
+
+    font-size:32px;
+
+    color:#8b5e3c;
+
+    letter-spacing:6px;
+
+}
+
+/* ==========================================
+   DAY CARDS
+========================================== */
+
+.chapter{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    padding:30px 0;
+
+    border-top:1px solid rgba(110,90,40,.18);
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+}
+
+.chapter:last-of-type{
+
+    border-bottom:1px solid rgba(110,90,40,.18);
+
+}
+
+.chapter:hover{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.chapter-number{
+
+    display:block;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#8b5e3c;
+
+}
+
+.chapter h2{
+
+    margin-top:12px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    color:#4f3322;
+
+}
+
+.chapter p{
+
+    margin-top:12px;
+
+    color:#7b5d45;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    text-decoration:none;
+
+    color:#5a2f17;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    transition:.35s ease;
+
+}
+
+.back-btn:hover{
+
+    letter-spacing:2px;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width:768px){
+
+    .letter{
+
+        min-height:auto;
+
+    }
+
+    .journey{
+
+        margin-top:50px;
+
+    }
+
+    .journey h1{
+
+        font-size:62px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+    .chapter h2{
+
+        font-size:34px;
+
+    }
+
+    .chapter p{
+
+        font-size:17px;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .journey{
+
+        margin-top:35px;
+
+    }
+
+    .journey h1{
+
+        font-size:48px;
+
+    }
+
+    .subtitle{
+
+        font-size:17px;
+
+    }
+
+    .chapter{
+
+        padding:22px 0;
+
+    }
+
+    .chapter h2{
+
+        font-size:28px;
+
+    }
+
+    .chapter p{
+
+        font-size:16px;
+
+    }
+
+}/* ==========================================
+   CHAPTER PAGE
+========================================== */
+
+.letter{
+
+    min-height:1100px;
+
+    height:auto;
+
+}
+
+/* ==========================================
+   JOURNEY
+========================================== */
+
+.journey{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    max-width:680px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.journey h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:82px;
+
+    color:#5a2f17;
+
+    line-height:1;
+
+}
+
+.subtitle{
+
+    margin-top:20px;
+
+    color:#6b4d36;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+.divider{
+
+    margin:45px 0 60px;
+
+    font-size:32px;
+
+    color:#8b5e3c;
+
+    letter-spacing:6px;
+
+}
+
+/* ==========================================
+   DAY CARDS
+========================================== */
+
+.chapter{
+
+    position:relative;
+
+    display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    padding:30px 40px 30px 0;
+
+    border-top:1px solid rgba(110,90,40,.18);
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+.chapter:last-of-type{
+
+    border-bottom:1px solid rgba(110,90,40,.18);
+
+}
+
+.chapter:hover{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    padding-left:12px;
+
+}
+
+.chapter::after{
+
+    content:"→";
+
+    position:absolute;
+
+    right:35px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:30px;
+
+    font-weight:600;
+
+    color:#6b3fa0;
+
+    opacity:0;
+
+    transition:all .35s ease;
+
+}
+
+.chapter:hover::after{
+
+    opacity:1;
+
+    right:22px;
+
+}
+
+.chapter-number{
+
+    display:block;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#8b5e3c;
+
+    transition:.35s ease;
+
+}
+
+.chapter h2{
+
+    margin-top:12px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    color:#4f3322;
+
+    transition:.35s ease;
+
+}
+
+.chapter p{
+
+    margin-top:12px;
+
+    color:#7b5d45;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    transition:.35s ease;
+
+}
+
+.chapter:hover .chapter-number,
+
+.chapter:hover h2,
+
+.chapter:hover p{
+
+    transform:translateX(-8px);
+
+}
+
+/* ==========================================
+   BACK BUTTON
+========================================== */
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    text-decoration:none;
+
+    color:#5a2f17;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    transition:.35s ease;
+
+}
+
+.back-btn:hover{
+
+    letter-spacing:2px;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width:768px){
+
+    .letter{
+
+        min-height:auto;
+
+    }
+
+    .journey{
+
+        margin-top:50px;
+
+    }
+
+    .journey h1{
+
+        font-size:62px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+    .chapter{
+
+        padding:26px 35px 26px 0;
+
+    }
+
+    .chapter h2{
+
+        font-size:34px;
+
+    }
+
+    .chapter p{
+
+        font-size:17px;
+
+    }
+
+    .chapter::after{
+
+        font-size:26px;
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .journey{
+
+        margin-top:35px;
+
+    }
+
+    .journey h1{
+
+        font-size:48px;
+
+    }
+
+    .subtitle{
+
+        font-size:17px;
+
+    }
+
+    .chapter{
+
+        padding:22px 30px 22px 0;
+
+    }
+
+    .chapter h2{
+
+        font-size:28px;
+
+    }
+
+    .chapter p{
+
+        font-size:16px;
+
+    }
+
+    .chapter::after{
+
+        font-size:22px;
+
+        right:18px;
+
+    }
+
+}

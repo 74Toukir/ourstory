@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Wish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* All your CSS styles remain unchanged */
+    /* ... (same CSS as you provided) ... */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #e8d7ff, #ffd6ec, #ffc3f1);
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      max-width: 90%;
+      width: 520px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 35px 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 12px 40px rgba(165, 104, 189, 0.3);
+      position: relative;
+      z-index: 1;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+    h1 span {
+      background: linear-gradient(to right, #a855f7, #ec4899);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .poem-block {
+      background-color: rgba(255, 255, 255, 0.35);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(164, 92, 182, 0.15);
+      color: #4b145b;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+    .main-text {
+      text-align: center;
+      color: #4b145b;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      padding-top: 20px;
+      border-top: 2px dashed #d8a3e3;
+      margin-bottom: 30px;
+    }
+    .question-line {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-top: 15px;
+      color: #6a217d;
+      font-weight: 500;
+    }
+    .dropdown-inline {
+      display: inline-block;
+      position: relative;
+      margin-left: 10px;
+    }
+    .dropbtn {
+      background: linear-gradient(135deg, #a855f7, #d946ef);
+      color: white;
+      padding: 11px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    .dropbtn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #9333ea, #db2777);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 170px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      z-index: 2;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: #4b145b;
+      padding: 12px 18px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover {
+      background-color: #f7e1fb;
+    }
+    .dropdown-inline:hover .dropdown-content {
+      display: block;
+    }
+    .response {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: 600;
+      color: #8b0d6d;
+      font-size: 1.15rem;
+      animation: fadeIn 0.6s ease;
+    }
+    .signature {
+      text-align: right;
+      margin-top: 45px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #6d0076;
+    }
+    .emoji-box {
+      background-color: #9b2c79;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 10px;
+      margin-left: 6px;
+      font-size: 1rem;
+    }
+    #heart-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .heart {
+      position: absolute;
+      color: #ff5c8d;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 500px) {
+      .container {
+        padding: 25px 15px;
+        margin: 50px 10px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .dropbtn {
+        font-size: 0.9rem;
+      }
+      .main-text, .poem-block, .question-line, .signature {
+        font-size: 0.95rem;
+      }
+      .response {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<audio id="bg-music" autoplay>
+  <source src="songs/song3.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+  <div id="heart-container"></div>
+
+  <div class="container">
+    <h1><span>My Love for You !</span></h1>
+
+    <div class="poem-block">
+      If you are like blah-blah-blah,<br>
+      then I’ll be like hmm, hmm, hmm.<br><br>
+      If you are a drama queen,<br>
+      then I will never get tired of you.<br><br>
+      If you say you're not beautiful,<br>
+      I’ll make you feel like the most beautiful person alive.<br><br>
+      If you're a very talkative person,<br>
+      then I’ll be the one who loves listening to you endlessly.<br><br>
+      If you found a home in me,<br>
+      then I’ve found my whole world in you.
+    </div>
+
+    <p class="main-text">
+      Before I met you, I never thought that one  
+      name can make me blush like an idiot. Before I met you, I never realized that few  
+      minutes of someone's ignorance can make me anxious.
+    </p>
+
+    <div class="question-line">
+      Will you be mine forever? 
+      <div class="dropdown-inline">
+        <button class="dropbtn">Jawab yaha dedo ▼</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="event.preventDefault(); showResponse('Yes')">Yes</a>
+          <a href="#" onclick="event.preventDefault(); showResponse('No')">No</a>
+        </div>
+      </div>
+    </div>
+
+    <p id="response" class="response"></p>
+
+    <p class="signature">
+      — Your, 
+      <span class="emoji-box">🐰</span> 
+      Toukir
+    </p>
+  </div>
+
+ <script>
+  const response = document.getElementById('response');
+  const heartContainer = document.getElementById('heart-container');
+  const audio = document.getElementById('bg-music');
+  let heartInterval;
+
+  // 🔊 Ensure music starts on user gesture
+  window.addEventListener('click', () => {
+    audio.play().catch(() => {});
+  }, { once: true });
+
+  // ✅ Auto play on load
+  window.onload = () => {
+    audio.play().catch(() => {});
+  };
+
+  function showResponse(answer) {
+    if (answer === 'Yes') {
+      response.textContent = 'You just made my whole world! ❤️';
+      if (!heartInterval) {
+        heartInterval = setInterval(createHeart, 300);
+      }
+
+      // Do NOT stop the music — let it play for 15s then move
+      setTimeout(() => {
+        window.location.href = 'final.html';
+      }, 15000);
+    } else {
+      response.textContent = ' Even if not, I’m glad I met you. 🌸';
+      clearInterval(heartInterval);
+      heartInterval = null;
+      // 🛑 Stop music
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = Math.random() * 18 + 12 + 'px';
+    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+    heart.style.top = '-20px';
+    heartContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+</script>
+
+</body>
+</html>
